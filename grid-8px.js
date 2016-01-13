@@ -3,8 +3,8 @@
  * Shows a grid. Toggle with Ctrl+g or hold down Alt/Option key.
  */
 
-var colorSmallBlock = '#F7E1F6';
-var colorBigBlock = '#ADE2E0';
+var colorSmallBlock = '#8B929E';
+var colorBigBlock = '#5F6067';
 var sizeSmallBlock = 8;
 var sizeBigBlock = 32;
 
