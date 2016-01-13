@@ -21,10 +21,31 @@ function initGrid() {
   }
 
   function onKeydown(e) {
+    var grid = document.getElementById('grid-8px'),
+      left,
+      top;
+
     if(e.ctrlKey && e.which === 71) {
       localStorage.grid8px = localStorage.grid8px === 'on' ? 'off' : 'on';
     } else if (e.altKey) {
       tempVisibility = true;
+    } else if (e.shiftKey) {
+      if (e.which === 38) {
+        top = parseInt(grid.style.top, 10) - 1;
+        grid.style.top = top + 'px';
+      }
+      if (e.which === 40) {
+        top = parseInt(grid.style.top, 10) + 1;
+        grid.style.top = top + 'px';
+      }
+      if (e.which === 37) {
+        left = parseInt(grid.style.left, 10) - 1;
+        grid.style.left = left + 'px';
+      }
+      if (e.which === 39) {
+        left = parseInt(grid.style.left, 10) + 1;
+        grid.style.left = left + 'px';
+      }
     }
     updateGridVisibility();
   }
@@ -64,6 +85,7 @@ function createOverlay(height) {
       'background: ' + background + ';' +
       'height:' + height + 'px;';
   div.setAttribute('style', style);
+  div.setAttribute('id', 'grid-8px');
   return div;
 }
 
